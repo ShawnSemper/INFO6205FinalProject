@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c943383a-9fb6-4eef-9c9a-c2cc1bf10a9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/COVIDSim.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MathUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MinPQ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PersonPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Variables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MoveTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/COVID19SimGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/COVIDSim$Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/COVIDSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COVID19Sim/COVIDSim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/MinPQ$HeapIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/MinPQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COVID19Sim/MyPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COVID19Sim/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/PersonPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COVID19Sim/Variables.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COVID19Sim/Variables.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COVID19SimGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COVID19SimGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COVIDSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COVIDSim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinPQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Citizens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Variables.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +49,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="321" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -77,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586737717637</updated>
       <workItem from="1586737724468" duration="697000" />
-      <workItem from="1586741329539" duration="21039000" />
+      <workItem from="1586741329539" duration="33882000" />
     </task>
     <servers />
   </component>
@@ -89,26 +100,34 @@
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
     <state x="5" y="-875" key="#Project_Structure/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586741338046" />
-    <state x="218" y="-857" key="#com.intellij.ide.util.MemberChooser" timestamp="1586799744233">
+    <state x="218" y="-857" key="#com.intellij.ide.util.MemberChooser" timestamp="1586902593911">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="218" y="-857" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586799744233" />
-    <state width="1880" height="286" key="GridCell.Tab.0.bottom" timestamp="1586837371074">
+    <state x="218" y="-857" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586902593911" />
+    <state x="17" y="-1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586837714859">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1880" height="286" key="GridCell.Tab.0.bottom/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586837371074" />
-    <state width="1880" height="286" key="GridCell.Tab.0.center" timestamp="1586837371073">
+    <state x="17" y="-1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586837714859" />
+    <state width="1880" height="286" key="GridCell.Tab.0.bottom" timestamp="1586903008741">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1880" height="286" key="GridCell.Tab.0.center/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586837371073" />
-    <state width="1880" height="286" key="GridCell.Tab.0.left" timestamp="1586837371072">
+    <state width="1880" height="286" key="GridCell.Tab.0.bottom/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586903008741" />
+    <state width="1880" height="286" key="GridCell.Tab.0.center" timestamp="1586903008739">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1880" height="286" key="GridCell.Tab.0.left/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586837371072" />
-    <state width="1880" height="286" key="GridCell.Tab.0.right" timestamp="1586837371074">
+    <state width="1880" height="286" key="GridCell.Tab.0.center/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586903008739" />
+    <state width="1880" height="286" key="GridCell.Tab.0.left" timestamp="1586903008738">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1880" height="286" key="GridCell.Tab.0.right/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586837371074" />
+    <state width="1880" height="286" key="GridCell.Tab.0.left/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586903008738" />
+    <state width="1880" height="286" key="GridCell.Tab.0.right" timestamp="1586903008740">
+      <screen x="-555" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1880" height="286" key="GridCell.Tab.0.right/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586903008740" />
+    <state x="180" y="-655" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1586902441418">
+      <screen x="-555" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="180" y="-655" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1440.900/-555.-1080.1920.1080@-555.-1080.1920.1080" timestamp="1586902441418" />
     <state x="-158" y="-959" key="new project wizard" timestamp="1586741392867">
       <screen x="-555" y="-1080" width="1920" height="1080" />
     </state>

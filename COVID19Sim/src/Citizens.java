@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class PersonPool {
-    private static PersonPool personPool = new PersonPool();
+public class Citizens {
+    private static Citizens personPool = new Citizens();
 
-    public static PersonPool getInstance() {
+    public static Citizens getInstance() {
         return personPool;
     }
 
@@ -34,7 +34,7 @@ public class PersonPool {
     }
 
 
-    private PersonPool() {
+    private Citizens() {
         City city = new City(400, 400);//设置城市中心为坐标(400,400)
         //添加城市居民
         for (int i = 0; i < Variables.TOTAL_POPULATION; i++) {
