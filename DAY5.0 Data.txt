@@ -1,0 +1,5 @@
+======= DAY 5.0 ========
+Susceptible number：3482
+Exposed number：1249
+Infectious number：242
+Infectious number：242

@@ -1,0 +1,5 @@
+======= DAY 7.0 ========
+Susceptible number：2287
+Exposed number：1749
+Infectious number：867
+Infectious number：867

@@ -2,6 +2,8 @@ import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -52,8 +54,8 @@ public class MyPanel extends JPanel implements Runnable {
 
         // display datas
         g.setColor(Color.WHITE);
-        g.drawString("Population：" + Variables.TOTAL_POPULATION, captionStartOffsetX, captionStartOffsetY);
-        g.drawString("World Time（Day）：" + (int) (worldTime / 10.0), captionStartOffsetX, captionStartOffsetY + captionSize);
+        g.drawString("Populationï¼š" + Variables.TOTAL_POPULATION, captionStartOffsetX, captionStartOffsetY);
+        g.drawString("World Timeï¼ˆDayï¼‰ï¼š" + (int) (worldTime / 10.0), captionStartOffsetX, captionStartOffsetY + captionSize);
 
         int susNum = Citizens.getInstance().getPeopleSize(Person.State.SUSCEPTIBLE);
         int exposedNum = Citizens.getInstance().getPeopleSize(Person.State.EXPOSED);
@@ -61,28 +63,57 @@ public class MyPanel extends JPanel implements Runnable {
         int recoverNum = Citizens.getInstance().getPeopleSize(Person.State.RECOVERED);
 
         g.setColor(new Color(0x000000));
-        g.drawString("Susceptible number：" + susNum, captionStartOffsetX, captionStartOffsetY + 2 * captionSize);
+        g.drawString("Susceptible numberï¼š" + susNum, captionStartOffsetX, captionStartOffsetY + 2 * captionSize);
         g.setColor(new Color(0xffee00));
-        g.drawString("Exposed number：" + exposedNum, captionStartOffsetX, captionStartOffsetY + 3 * captionSize);
+        g.drawString("Exposed numberï¼š" + exposedNum, captionStartOffsetX, captionStartOffsetY + 3 * captionSize);
         g.setColor(new Color(0xff0000));
-        g.drawString("Infectious number：" + infectNum, captionStartOffsetX, captionStartOffsetY + 4 * captionSize);
+        g.drawString("Infectious numberï¼š" + infectNum, captionStartOffsetX, captionStartOffsetY + 4 * captionSize);
         g.setColor(new Color(0x00ff00));
-        g.drawString("Recovered number：" + recoverNum, captionStartOffsetX, captionStartOffsetY + 5 * captionSize);
+        g.drawString("Recovered numberï¼š" + recoverNum, captionStartOffsetX, captionStartOffsetY + 5 * captionSize);
+
 
 
         // TODO : export csv file in order to do analysis
         if((worldTime / 10.0) % 1 == 0 ){
             System.out.println("======= DAY " + (int) worldTime / 10.0 + " ========");
-            System.out.println("Susceptible number：" + susNum);
-            System.out.println("Exposed number：" + exposedNum);
-            System.out.println("Infectious number：" + infectNum);
-            System.out.println("Recovered number：" + recoverNum);
+            System.out.println("Susceptible numberï¼š" + susNum);
+            System.out.println("Exposed numberï¼š" + exposedNum);
+            System.out.println("Infectious numberï¼š" + infectNum);
+            System.out.println("Recovered numberï¼š" + recoverNum);
+            WriteStuCSV("DAY" + (int) worldTime / 10.0 + " Data.txt");
         }
 
     }
 
+	public static void WriteStuCSV(String fileName) {
 
-    public static int worldTime = 0;//世界时间
+        int susNum = Citizens.getInstance().getPeopleSize(Person.State.SUSCEPTIBLE);
+        int exposedNum = Citizens.getInstance().getPeopleSize(Person.State.EXPOSED);
+        int infectNum = Citizens.getInstance().getPeopleSize(Person.State.INFECTIOUS);
+        int recoverNum = Citizens.getInstance().getPeopleSize(Person.State.RECOVERED);
+		// try with resources: all resources in () are closed at conclusion of try clause
+		try (	// open output stream to output file for writing purpose.
+			FileWriter fw = new FileWriter(fileName);
+			BufferedWriter out= new BufferedWriter(fw);
+			) {
+				out.write("======= DAY " + (int) worldTime / 10.0 + " ========");
+				out.newLine();
+				out.write("Susceptible numberï¼š" + susNum);
+				out.newLine();
+				out.write("Exposed numberï¼š" + exposedNum);
+				out.newLine();
+				out.write("Infectious numberï¼š" + infectNum);
+				out.newLine();				
+				out.write("Infectious numberï¼š" + infectNum);
+			out.flush();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+    public static int worldTime = 0;//ä¸–ç•Œæ—¶é—´
 
     public java.util.Timer timer = new Timer();
 
@@ -96,7 +127,7 @@ public class MyPanel extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        timer.schedule(new MyTimerTask(), 0, 100);//启动世界计时器，时间开始流动（突然脑补DIO台词：時は停た）
+        timer.schedule(new MyTimerTask(), 0, 100);//å�¯åŠ¨ä¸–ç•Œè®¡æ—¶å™¨ï¼Œæ—¶é—´å¼€å§‹æµ�åŠ¨ï¼ˆçª�ç„¶è„‘è¡¥DIOå�°è¯�ï¼šæ™‚ã�¯å�œã�Ÿï¼‰
 
     }
 

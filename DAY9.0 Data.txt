@@ -1,0 +1,5 @@
+======= DAY 9.0 ========
+Susceptible number：1485
+Exposed number：1421
+Infectious number：1718
+Infectious number：1718

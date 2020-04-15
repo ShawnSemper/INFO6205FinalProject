@@ -1,0 +1,5 @@
+======= DAY 6.0 ========
+Susceptible number：2905
+Exposed number：1578
+Infectious number：471
+Infectious number：471

@@ -1,0 +1,5 @@
+======= DAY 4.0 ========
+Susceptible number：3986
+Exposed number：887
+Infectious number：114
+Infectious number：114
