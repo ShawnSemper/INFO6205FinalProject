@@ -1,5 +1,0 @@
-======= DAY 8.0 ========
-Susceptible number：1840
-Exposed number：1692
-Infectious number：1272
-Infectious number：1272

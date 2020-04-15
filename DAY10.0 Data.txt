@@ -1,5 +1,0 @@
-======= DAY 10.0 ========
-Susceptible number：1285
-Exposed number：1121
-Infectious number：2025
-Infectious number：2025

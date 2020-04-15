@@ -3,7 +3,10 @@ import com.sun.xml.internal.bind.v2.TODO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStreamWriter;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -80,36 +83,45 @@ public class MyPanel extends JPanel implements Runnable {
             System.out.println("Exposed numberï¼š" + exposedNum);
             System.out.println("Infectious numberï¼š" + infectNum);
             System.out.println("Recovered numberï¼š" + recoverNum);
-            WriteStuCSV("DAY" + (int) worldTime / 10.0 + " Data.txt");
+            WriteStuCSV();
         }
 
     }
 
-	public static void WriteStuCSV(String fileName) {
-
+	public static File WriteStuCSV() {
+		File csvFile = new File("Data.csv");
+		FileOutputStream fos = null;
         int susNum = Citizens.getInstance().getPeopleSize(Person.State.SUSCEPTIBLE);
         int exposedNum = Citizens.getInstance().getPeopleSize(Person.State.EXPOSED);
         int infectNum = Citizens.getInstance().getPeopleSize(Person.State.INFECTIOUS);
         int recoverNum = Citizens.getInstance().getPeopleSize(Person.State.RECOVERED);
 		// try with resources: all resources in () are closed at conclusion of try clause
-		try (	// open output stream to output file for writing purpose.
-			FileWriter fw = new FileWriter(fileName);
-			BufferedWriter out= new BufferedWriter(fw);
-			) {
+		try {	// open output stream to output file for writing purpose.
+	            if(!csvFile.exists()){
+	                csvFile.createNewFile();
+	                fos = new FileOutputStream(csvFile);
+	            }else{
+
+	                fos = new FileOutputStream(csvFile,true);
+	            }		
+	            OutputStreamWriter out = new OutputStreamWriter(fos, "UTF-8");
+				out.write("\r\n");			 
 				out.write("======= DAY " + (int) worldTime / 10.0 + " ========");
-				out.newLine();
+				out.write("\r\n");
 				out.write("Susceptible numberï¼š" + susNum);
-				out.newLine();
+				out.write("\r\n");
 				out.write("Exposed numberï¼š" + exposedNum);
-				out.newLine();
+				out.write("\r\n");
 				out.write("Infectious numberï¼š" + infectNum);
-				out.newLine();				
-				out.write("Infectious numberï¼š" + infectNum);
-			out.flush();
+				out.write("\r\n");			
+				out.write("Recovered numberï¼š" + recoverNum);
+			out.close();
+			return csvFile;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
 
 	}
 
@@ -133,3 +145,4 @@ public class MyPanel extends JPanel implements Runnable {
 
 
 }
+

@@ -1,5 +1,0 @@
-======= DAY 11.0 ========
-Susceptible number：1126
-Exposed number：831
-Infectious number：2253
-Infectious number：2253
